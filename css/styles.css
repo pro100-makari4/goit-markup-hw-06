@@ -26,6 +26,9 @@ ul,
 ol {
     padding-left: 0;
     margin: 0;
+    display: flex;
+    /* mobil */
+    flex-direction: column;
 }
 
 img {
@@ -34,16 +37,33 @@ img {
     height: auto;
 }
 
-
+/* mobil */
 .container {
-    max-width: 1158px;
-    padding: 0 15px;
+    max-width: 768px;
+    min-width: 320px;
+    padding: 0 16px;
     margin: 0 auto;
 }
 
+@media (min-width: 768px) and (max-width: 1157px) {
+    .container {
+        min-width: 768px;
+        max-width: 1157px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+
+    ul,
+    ol {
+        flex-direction: row;
+    }
+}
+
+/* mobil */
 .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 
 .list {
@@ -96,7 +116,7 @@ img {
 }
 
 .menu-nav {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -145,6 +165,7 @@ img {
 }
 
 .contacts {
+    display: none;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -164,6 +185,21 @@ img {
     color: #404bbf;
 }
 
+.burger-menu-btn {
+    background-color: var(--WHITE, #FFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.burger-menu-btn-icon {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 /* /Navigation */
 /* ///HEADER */
 
@@ -171,8 +207,10 @@ img {
 
 .hero {
     background-color: #2e2f42;
-    padding-top: 188px;
-    padding-bottom: 188px;
+    padding-top: 72px;
+    /* mobil */
+    padding-bottom: 72px;
+    /* mobil */
     margin: 0 auto;
     background-image: linear-gradient(rgba(46, 47, 66, 0.70),
             rgba(46, 47, 66, 0.70)),
@@ -244,7 +282,29 @@ img {
     letter-spacing: 0.02em;
 }
 
-/* Benefits */
+/* Benefits !!!!!!!!!!*/
+
+/* mobil */
+.benefits-title {
+    align-self: stretch;
+    color: var(--NAVY-BLUE, #2E2F42);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+/* mobil */
+.benefits-text {
+    align-self: stretch;
+    color: var(--SLATE, #434455);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
 
 .benefits-icon-box {
     display: flex;
@@ -256,16 +316,27 @@ img {
     background: #F4F4FD;
     padding: 24px 100px;
     margin-bottom: 8px;
+
+
+    /* visually-hidden */
+
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
 }
 
 .benefits-list {
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
+    gap: 72px;
+    justify-content: center;
+    align-items: center;
 }
 
 .benefits-list-item {
-    max-width: 264px;
+    max-width: 288px;
 }
 
 /* ////Benefits */
@@ -292,13 +363,15 @@ img {
 
 .team-list {
     display: flex;
-    gap: 24px;
+    gap: 72px;
     justify-content: center;
     align-items: center;
 }
 
 .team-list-item {
-    max-width: calc((100% - 48px) / 3);
+    /* desctop max-width: calc((100% - 48px) / 3);
+    */
+
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
         0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -307,6 +380,7 @@ img {
 
 .social-icon-list {
     display: flex;
+    flex-direction: row;
     gap: 24px;
     justify-content: center;
     align-items: center;
@@ -343,7 +417,6 @@ img {
 
 .portfolio-list {
     display: flex;
-    column-gap: 24px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -351,7 +424,7 @@ img {
 }
 
 .portfolio-list-item {
-    max-width: calc((100% - 48px) / 3);
+    /* max-width: calc((100% - 48px) / 3);  desctop */
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -405,25 +478,47 @@ img {
 
 /* Footer */
 
+@media (min-width: 768px) and (max-width: 1157px) {
+    .footer-container {
+        margin-right: 0px;
+    }
+
+    .footer-description {
+        max-width: 288px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline
+    }
+}
+
 .footer {
     background-color: #2e2f42;
-    padding: 100px 0;
+    padding: 96px 0;
 }
 
 .footer-container {
     display: flex;
-    align-items: baseline
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+
 }
 
 
 /* FOOTER CONTANT */
 
 .footer-content {
-    margin-right: 120px;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-description {
-    max-width: 264px;
+    max-width: 288px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.02em;
@@ -431,12 +526,9 @@ img {
     color: #f4f4fd;
 }
 
-.footer .logo {
-    color: #f4f4fd;
-}
-
 .footer-logo {
     display: inline-block;
+    margin: 0 auto;
     margin-bottom: 16px;
     font-family: "Raleway", sans-serif;
     font-size: 18px;
@@ -461,21 +553,27 @@ img {
 
 /* FOOTER SOCIALS */
 
-.footer-socials-title {
+.footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-title {
     margin-bottom: 16px;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.02em;
-    text-align: left;
+    text-align: center;
     color: #FFFFFF;
 }
 
 .footer-socials-list {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
+
     gap: 16px;
-    margin-right: 80px;
 }
 
 .footer-socials-item {
@@ -510,13 +608,14 @@ img {
 
 .footer-subscribe {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 24px;
 }
 
 
 .footer-input-email {
-    width: 264px;
+    width: 288px;
     height: 40px;
     flex-shrink: 0;
     border-radius: 4px;
@@ -541,7 +640,8 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 165px;
+    margin: 0 auto;
+    width: 165px;
     padding: 8px 24px;
 
     color: #FFFFFF;
@@ -790,3 +890,6 @@ input::placeholder {
 
 
 /* ////MODAL OVERLAY */
+
+
+/* BURGER MENU */
