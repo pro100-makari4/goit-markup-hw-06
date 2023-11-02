@@ -203,17 +203,18 @@ img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-width: 320px;
     max-width: 1440px;
 }
 
 .hero-title {
     color: #FFFFFF;
     text-align: center;
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
-    line-height: 1.07;
+    line-height: 1.11;
     letter-spacing: 0.02em;
-    max-width: 496px;
+    width: 180px;
     margin: 0 auto 48px auto;
 }
 
@@ -418,6 +419,7 @@ img {
     border-bottom: 1px solid #E7E9FC;
     border-right: 1px solid #E7E9FC;
     padding: 32px 16px;
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08); 
 }
 
 .payment-overlay {
@@ -607,6 +609,7 @@ img {
     border: 1px solid #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     color: #FFFFFF;
+    opacity: 0.6;
     background-color: transparent;
     padding-left: 16px;
 
