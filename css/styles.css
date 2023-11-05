@@ -1052,14 +1052,10 @@ input::placeholder {
         flex-direction: row;
     }
 
-    .footer-description {
-      
-    }
-
     .footer-container {
         display: flex;
-        flex-direction: column;
-        align-items: baseline
+        flex-direction: row;
+        align-items: baseline;
     }
 
 
