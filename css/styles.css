@@ -81,7 +81,17 @@ img {
 
 /* Navigation */
 
-
+.menu {
+    border-bottom: 1px solid #E7E9FC;
+    box-shadow:
+        0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+    min-width: 320px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
 
 .nav-container {
     display: flex;
@@ -89,86 +99,9 @@ img {
     align-items: center;
 }
 
-.menu {
-    border-bottom: 1px solid #E7E9FC;
-    box-shadow:
-        0px 2px 1px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 1px 6px rgba(46, 47, 66, 0.08);
-    min-width: 320;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 16px 0;
-}
-
-.menu-nav {
-    display: none;
-    align-items: center;
-}
-
-.nav-elements {
-    display: flex;
-    gap: 40px;
-}
-
-.nav-link {
-    padding: 24px 0;
-}
-
-.nav-item {
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-}
-
-.nav-link {
-    display: block;
-    padding: 24px 0;
-    position: relative;
-    color: #2E2F42;
-    transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: #404bbf;
-}
-
-.active {
-    color: #404BBF;
-}
-
-.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    display: block;
-    width: 48px;
-    height: 4px;
-    background-color: #404BBF;
-    border-radius: 2px;
-}
-
+.menu-nav,
 .contacts {
     display: none;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-}
-
-.contacts-list {
-    display: flex;
-    gap: 40px;
-}
-
-.contacts-link {
-    transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-}
-
-.contacts-link:hover,
-.contacts-link:focus {
-    color: #404bbf;
 }
 
 
@@ -191,7 +124,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     min-width: 320px;
-    max-width: 1440px;
 }
 
 .hero-title {
@@ -277,27 +209,8 @@ img {
 
 }
 
-
 .benefits-icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    border-radius: 4px;
-    border: 1px solid #8E8F99;
-    background: #F4F4FD;
-    padding: 24px 100px;
-    margin-bottom: 8px;
-
-
-    /* visually-hidden */
-
-    position: absolute;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    z-index: -1;
-    visibility: hidden;
+    display: none;
 }
 
 .benefits-list {
@@ -405,13 +318,13 @@ img {
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.payment-overlay {
+.portfolio-overlay {
     position: relative;
     height: 100%;
     overflow: hidden;
 }
 
-.payment-overlay-text {
+.portfolio-overlay-text {
     position: absolute;
     display: block;
     top: 0;
@@ -428,8 +341,8 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-list-item:hover .payment-overlay-text,
-.portfolio-list-item:focus .payment-overlay-text {
+.portfolio-list-item:hover .portfolio-overlay-text,
+.portfolio-list-item:focus .portfolio-overlay-text {
     transform: translateY(0);
 }
 
@@ -957,7 +870,7 @@ input::placeholder {
 
 /* //////VISUALITY HIDDEN / OPEN */
 
-@media (min-width: 768px) and (max-width: 1157px) {
+@media Screen and (min-width: 768px) {
     .container {
         width: 768px;
     }
@@ -968,13 +881,52 @@ input::placeholder {
     }
 
     /* NAV */
+
+    .menu {
+        padding: 0;
+    }
+
     .menu-nav {
         display: flex;
         align-items: center;
     }
 
+    .nav-link {
+        display: block;
+        padding: 24px 0;
+        position: relative;
+        color: #2E2F42;
+        transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    }
+
+    .active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        display: block;
+        width: 48px;
+        height: 4px;
+        background-color: #404BBF;
+        border-radius: 2px;
+    }
+
+    .nav-elements {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav-item {
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    }
+
     .contacts {
         display: flex;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
     }
 
     .contacts-list {
@@ -984,6 +936,15 @@ input::placeholder {
 
     .contacts-link {
         padding: 6px 0;
+        transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    }
+
+    .active,
+    .nav-link:hover,
+    .nav-link:focus,
+    .contacts-link:hover,
+    .contacts-link:focus {
+        color: #404bbf;
     }
 
     .burger-menu-btn {
@@ -991,6 +952,8 @@ input::placeholder {
     }
 
     /* ///NAV */
+
+
 
     .hero-title {
         width: 496px;
@@ -1032,7 +995,7 @@ input::placeholder {
     }
 
     .team-list-item {
-        width: 264px; 
+        width: 264px;
     }
 
     .portfolio-list {
@@ -1042,13 +1005,13 @@ input::placeholder {
     }
 
     .portfolio-list-item {
-      width: 356px;
+        width: 356px;
     }
 
 
     /* FOOTER */
     .footer-container {
-        
+
         flex-direction: row;
     }
 
@@ -1062,4 +1025,64 @@ input::placeholder {
 
     /* //FOOTER */
 
+}
+
+
+@media Screen and (min-width: 1158px) {
+
+    .container {
+        width: 1158px;
+    }
+
+    .section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .hero {
+        max-width: 1440px;
+    }
+
+    .benefits-icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 112px;
+        border-radius: 4px;
+        border: 1px solid #8E8F99;
+        background: #F4F4FD;
+        margin-bottom: 8px;
+        width: 264px;
+
+    }
+
+    .benefits-list {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .benefits-list-item {
+        width: 264px;
+        max-width: calc((100% - 72px) / 4);
+    }
+
+    .team-list-item {
+        max-width: calc((100% - 72px) / 4);
+    }
+
+
+    .portfolio-list {
+        column-gap: 24px;
+    }
+
+    .portfolio-list-item {
+        max-width: calc((100% - 48px) / 3);
+    }
+
+
+
+
+
+   
 }
