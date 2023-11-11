@@ -74,8 +74,6 @@ img {
 .menu {
     border-bottom: 1px solid #E7E9FC;
     min-width: 320px;
-    max-width: 1440px;
-    margin: 0 auto;
 }
 
 .nav-container {
