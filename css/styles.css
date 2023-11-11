@@ -92,8 +92,7 @@ img {
 
 .hero {
     background-color: #2e2f42;
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding: 72px 0;
     margin: 0 auto;
     background-image: linear-gradient(rgba(46, 47, 66, 0.70),
             rgba(46, 47, 66, 0.70)),
@@ -878,10 +877,6 @@ img {
 
     /* NAV */
 
-    .nav-container {
-        width: auto;
-    }
-
     .menu {
         padding: 0;
     }
@@ -1106,6 +1101,7 @@ img {
 
     .hero {
         max-width: 100%;
+        padding: 188px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.70),
                 rgba(46, 47, 66, 0.70)),
             url('../images/desktop/people-office-desktop.jpg');
